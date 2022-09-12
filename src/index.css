@@ -1,0 +1,18 @@
+.container {
+  background-color: blue;
+  max-width: 600px;
+  margin: 5rem auto;
+  padding: 2.5rem 2rem;
+  display: flex;
+  gap: 15rem;
+}
+
+.form {
+}
+
+.list {
+  
+}
+
+
+
