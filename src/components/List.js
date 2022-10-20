@@ -1,28 +1,26 @@
 import React from 'react';
+import Item from './Item';
 
-const List = ({ list, setList }) => {
-  const removeItem = (id) => {
-    const newList = list.filter((item) => item.id !== id);
-    setList(newList);
-  };
-
+const List = ({ list, setList, editItem, removeItem }) => {
   return (
-    <article className='list'>
+    <section className='list'>
+      {list.length === 0 && <h2>Nothing To See Here ...</h2>}
       {list.map((item) => {
-        const { title, date, description, id } = item;
         return (
-          <div className='todo-item' key={id}>
-            <h5>
-              {title} : {date}
-            </h5>
-            <p>{description}</p>
-            <button type='btn' onClick={() => removeItem(id)}>
-              delete
-            </button>
-          </div>
+          <Item
+            key={item.id}
+            {...item}
+            removeItem={removeItem}
+            editItem={editItem}
+          />
         );
       })}
-    </article>
+      {list.length > 0 && (
+        <button type='button' className='btn clear-btn' onClick={() => setList([])}>
+          Clear List
+        </button>
+      )}
+    </section>
   );
 };
 

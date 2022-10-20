@@ -1,18 +1,126 @@
-.container {
-  background-color: blue;
-  max-width: 600px;
-  margin: 5rem auto;
-  padding: 2.5rem 2rem;
-  display: flex;
-  gap: 15rem;
+body {
+  background-color: #e0e0e0;
+  font-family: Century Gothic;
 }
 
-.form {
+.container {
+  display: flex;
+  background-color: #ffffff;
+  margin: auto;
+  margin-top: 50px;
+  width: 70vw;
+  border-radius: 0.6rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 5px;
+  color: #0096ff;
 }
 
 .list {
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1px;
+  margin: 10px;
+  flex-grow: 2;
 }
 
+.form {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  flex-grow: 1;
+}
 
+input,
+textarea {
+  margin: 10px;
+  display: inline-block;
+  width: 140px;
+  text-align: center;
+  padding: 4px;
+  font-size: 15px;
+}
 
+label {
+  display: block;
+  padding: 10px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eaeaea;
+  width: 500px;
+  margin: 1rem;
+  padding: 2px;
+  border-radius: 1.2rem;
+  font-size: 1rem;
+}
+
+.todo-item p {
+  font-size: 1rem;
+}
+
+.todo-title {
+  text-transform: uppercase;
+}
+
+.btn {
+  margin: 20px;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  border-color: transparent;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.todo-date {
+  font-size: 1rem;
+}
+
+.remove-btn,
+.desc-btn,
+.edit-btn {
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin: 4px;
+  background: transparent;
+  border-color: transparent;
+}
+
+.desc-btn {
+  color: #0096ff;
+}
+
+.remove-btn {
+  color: #860111;
+}
+
+.edit-btn {
+  color: #81e979;
+}
+
+.todo-info {
+  margin-left: 100px;
+}
+
+.todo-btns {
+  display: grid;
+  margin-right: 5px;
+  position: sticky;
+}
+
+.clear-btn {
+  color:  #860111;
+}
+
+.submit-btn {
+  color: #0096ff
+}
