@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import List from './components/List';
 
 const getLocalStorage = () => {
@@ -19,15 +19,6 @@ function App() {
   const [list, setList] = useState(getLocalStorage);
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
-
-  useEffect(() => {
-    if (isEditing && list.length === 0) {
-      setItem({ title: '', date: '', description: '' });
-      setIsEditing(false);
-    }
-  }, [list, isEditing]);
-
-  const titleInput = useRef();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -83,13 +74,16 @@ function App() {
     setList(newList);
   };
 
-  useEffect(() => {
-    titleInput.current.focus();
-  }, []);
+  const titleInput = useRef();
 
   useEffect(() => {
+    titleInput.current.focus();
     localStorage.setItem('list', JSON.stringify(list));
-  }, [list]);
+    if (isEditing && list.length === 0) {
+      setItem({ title: '', date: '', description: '' });
+      setIsEditing(false);
+    }
+  }, [list, isEditing]);
 
   return (
     <main>

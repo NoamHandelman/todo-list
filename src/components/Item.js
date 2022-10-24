@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BsTrashFill } from 'react-icons/bs';
 import { AiOutlinePlus, AiOutlineMinus, AiFillEdit } from 'react-icons/ai';
 
