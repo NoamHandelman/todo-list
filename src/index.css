@@ -179,7 +179,7 @@ label {
   .todo-item {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 220px;
   }
 
   .todo-title {
